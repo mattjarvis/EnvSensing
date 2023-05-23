@@ -11,14 +11,6 @@
   and this RTC: PCF8523
 
 
-  TODO:
-  √ Detect if Serial is connected, if so, turn on debug mode
-  √ Write date to filename
-  √ Write to seperate file for each day?
-  √ Not sure the time recieved back from RTC - code was set to reset to last puloaded time when plugged in
-  √ Add light sensor
-  √ Add TMP36
-
   When first loading to arduino, to set the clock, uncomment the line in setup()
     // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   then comment it again and re-upload and check the time is set correctly.
@@ -78,7 +70,7 @@ int recordCount;
 
 // Change things here
 
-int interval_to_save = 60; // seconds inbetween saving the data
+int interval_to_save = 10; // seconds inbetween saving the data
 bool debugMode = true; // set to 'true' to see data from Serial Port or 'false' for use in the wild
 unsigned long dust_sampletime_ms = 30000;//sample 30s ;
 int ignoreFirstReadings = 5;
